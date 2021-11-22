@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
+import FormTask from "./components/FormTask";
 import "./App.css";
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
     <>
       <div className="contenedor">
         <Header />
+        <FormTask />
       </div>
     </>
   );
