@@ -20,7 +20,7 @@ const FormTask = ({ tareas, setTareas }) => {
       ...tareas,
       {
         id: uuidv4(),
-        texto: "Nuevo",
+        texto: inputTarea,
         completada: false,
       },
     ]);
@@ -33,7 +33,7 @@ const FormTask = ({ tareas, setTareas }) => {
         className="formulario-tareas__input"
         placeholder="Add a task"
         value={inputTarea}
-        onChange={handleInput}
+        onChange={(e) => handleInput(e)}
       />
       <button type="submit" className="formulario-tareas__boton">
         <FontAwesomeIcon

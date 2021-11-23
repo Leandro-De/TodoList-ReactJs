@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
 import FormTask from "./components/FormTask";
+import List from "./components/List";
+
 import "./App.css";
 
 const App = () => {
@@ -24,6 +26,7 @@ const App = () => {
       <div className="contenedor">
         <Header />
         <FormTask tareas={tareas} setTareas={setTareas} />
+        <List tareas={tareas} />
       </div>
     </>
   );
