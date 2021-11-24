@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheckSquare,
   faEdit,
+  faSquare,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Task = ({ tarea }) => {
+const Task = ({ tarea, toggleCompletada }) => {
   //State para editar una tarea
   const [editartarea, SetEditarTarea] = useState(false);
 
@@ -21,8 +22,9 @@ const Task = ({ tarea }) => {
   return (
     <li className="lista-tareas__tarea">
       <FontAwesomeIcon
-        icon={faCheckSquare}
+        icon={tarea.completada ? faCheckSquare : faSquare}
         className="lista-tareas__icono lista-tareas__icono-check"
+        onClick={() => toggleCompletada(tarea.id)}
       />
       <div className="lista-tareas__texto">
         {/* Condicional para actualizar */}

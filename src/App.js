@@ -26,7 +26,7 @@ const App = () => {
       <div className="contenedor">
         <Header />
         <FormTask tareas={tareas} setTareas={setTareas} />
-        <List tareas={tareas} />
+        <List tareas={tareas} setTareas={setTareas} />
       </div>
     </>
   );
