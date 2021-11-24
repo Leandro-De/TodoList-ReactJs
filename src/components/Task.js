@@ -7,7 +7,7 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Task = ({ tarea, toggleCompletada, editarTarea }) => {
+const Task = ({ tarea, toggleCompletada, editarTarea, borrarTarea }) => {
   //State para editar una tarea
   const [editartarea, SetEditarTarea] = useState(false);
 
@@ -59,6 +59,7 @@ const Task = ({ tarea, toggleCompletada, editarTarea }) => {
         <FontAwesomeIcon
           icon={faTimes}
           className="lista-tareas__icono lista-tareas__icono-accion"
+          onClick={() => borrarTarea(tarea.id)}
         />
       </div>
     </li>
