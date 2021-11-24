@@ -19,14 +19,22 @@ const App = () => {
     },
   ]);
 
-  console.log(tareas);
+  // Mostrar tareas completadas
+  const [mostrarCompletadas, setMostrarCompletadas] = useState(false);
 
   return (
     <>
       <div className="contenedor">
-        <Header />
+        <Header
+          mostrarCompletadas={mostrarCompletadas}
+          setMostrarCompletadas={setMostrarCompletadas}
+        />
         <FormTask tareas={tareas} setTareas={setTareas} />
-        <List tareas={tareas} setTareas={setTareas} />
+        <List
+          tareas={tareas}
+          setTareas={setTareas}
+          mostrarCompletadas={mostrarCompletadas}
+        />
       </div>
     </>
   );
