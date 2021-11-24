@@ -24,6 +24,8 @@ const FormTask = ({ tareas, setTareas }) => {
         completada: false,
       },
     ]);
+    //Cuando agrego una tarea me deja vacio el form
+    setInputTarea("");
   };
 
   return (
