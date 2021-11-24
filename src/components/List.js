@@ -14,6 +14,18 @@ const List = ({ tareas, setTareas }) => {
     );
   };
 
+  //Funcion para editar tarea
+  const editarTarea = (id, nuevoTexto) => {
+    setTareas(
+      tareas.map((tarea) => {
+        if (tarea.id === id) {
+          return { ...tarea, texto: nuevoTexto };
+        }
+        return tarea;
+      })
+    );
+  };
+
   return (
     <ul className="lista-tareas">
       {tareas.length > 0 ? (
@@ -23,6 +35,7 @@ const List = ({ tareas, setTareas }) => {
               key={tarea.id}
               tarea={tarea}
               toggleCompletada={toggleCompletada}
+              editarTarea={editarTarea}
             />
           );
         })

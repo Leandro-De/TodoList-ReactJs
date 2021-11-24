@@ -7,7 +7,7 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Task = ({ tarea, toggleCompletada }) => {
+const Task = ({ tarea, toggleCompletada, editarTarea }) => {
   //State para editar una tarea
   const [editartarea, SetEditarTarea] = useState(false);
 
@@ -16,6 +16,10 @@ const Task = ({ tarea, toggleCompletada }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    //Editar tarea
+    editarTarea(tarea.id, nuevaTarea);
+
     SetEditarTarea(false);
   };
 
